@@ -65,3 +65,52 @@ def check_letter():
 
 # Call the function
 check_letter()
+
+# Problem 2: Old enough to vote?
+#
+# Write a Python function named `check_voting_eligibility` that determines if a
+# user is old enough to vote.
+# Fill in the logic to perform the eligibility check inside the function.
+#
+# Function Details:
+# - Prompt the user to input their age: "Please enter your age: "
+# - Validate the input to ensure the age is a possible value (no negative 
+#   numbers).
+# - Determine if the user is eligible to vote. Set a variable for the voting
+#   age.
+# - Print a message indicating whether the user is eligible to vote based on the
+#   entered age.
+#
+# Hints:
+# - Use the `input()` function to capture the user's age.
+# - Use `int()` to convert the input to an integer. Ensure that you handle any 
+#   conversion errors gracefully. You may need to look up how to do this online.
+# - Use a conditional statement to check if the age meets the minimum voting age
+#   requirement.
+
+def check_voting_eligibility():
+    # Prompt user for input
+    user_input = input("Please enter your age: ")
+
+    # Define the voting age requirement
+    voting_age = 18
+
+    try:
+        # Convert input to integer
+        age = int(user_input)
+
+        # Validate that age is not negative
+        if age < 0:
+            print("Invalid input! Age cannot be a negative number.")
+        # Check eligibility
+        elif age >= voting_age:
+            print("You are eligible to vote!")
+        else:
+            print(f"You are not eligible to vote yet. You must be at least {voting_age} years old.")
+            
+    except ValueError:
+        # Handle cases where input is not a whole number (e.g., text or symbols)
+        print("Invalid input. Please enter a valid numerical age.")
+
+# Call the function
+check_voting_eligibility()
